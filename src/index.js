@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Carousel from "./carousel.jsx";
-import "./styles.css";
+import CarouselDemo from "./carouseldemo.jsx";
+import "./styles.scss";
 
 function App() {
   return (
     <div className="App">
-      <Carousel />
+      <CarouselDemo />
       {/* <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2> */}
     </div>
