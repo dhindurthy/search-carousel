@@ -18,12 +18,14 @@ flex-direction: column;
 border: 1px solid black;
 ul {
   height: 90%;
-  border: 1px solid green;
+  // border: 1px solid green;
 }
   .buttons {
     display: flex;
     // height: 20%;
     // width: 100%;
+    padding: 0.25rem;
+    border: 1px solid green;
     justify-content: space-around;
   }
   button {

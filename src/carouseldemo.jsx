@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.scss";
 import Button from "./button.jsx";
 import Input from "./input.jsx";
-import Onthefly from "./onthefly-component.jsx";
 import Carousel from "./carousel.jsx";
 
 class CarouselDemo extends React.Component {
@@ -49,9 +48,15 @@ class CarouselDemo extends React.Component {
         </section>
         <Carousel
           todos={this.state.articles}
-          putSomethingIn={(i, index) =>
+          textBetweenButtons={activeKey => (
+            <span>
+              {activeKey + 1} of {this.state.articles.length}
+            </span>
+          )}
+          panelContent={(i, index) =>
             (index === 1 && (
               <p>
+                <h2>Custom Template</h2>
                 <Input />
                 <br />
                 {i.name}
@@ -59,6 +64,7 @@ class CarouselDemo extends React.Component {
             )) ||
             (index === 3 && (
               <p>
+                <h2>Custom Template</h2>
                 <Button>Sample button</Button>
                 <br />
                 {i.name}
@@ -66,6 +72,7 @@ class CarouselDemo extends React.Component {
             )) || (
               <section>
                 <h3>Form or Component or any UI customizable by user</h3>
+                <img src="https://via.placeholder.com/150" alt="somethign" />
                 <h4>{i.name}</h4>
               </section>
             )

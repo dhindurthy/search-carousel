@@ -7,8 +7,7 @@ function App() {
   return (
     <div className="App">
       <CarouselDemo />
-      {/* <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2> */}
+      <p>Note: This is NOT accessible and very LEAST CSS applied</p>
     </div>
   );
 }
