@@ -51,7 +51,6 @@ class Carousel extends React.Component {
             Previous
           </Button>
           {this.props.textBetweenButtons(this.state.activeKey)}
-
           <Button
             disabled={this.state.isNextDisabled && this.props.nextDisabled}
             buttonClick={this.buttonClick.bind(this, "next")}

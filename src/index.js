@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <CarouselDemo />
-      <p>Note: This is NOT accessible and very LEAST CSS applied</p>
+      <p>Note: This is NOT accessible and the LEAST CSS applied</p>
     </div>
   );
 }
