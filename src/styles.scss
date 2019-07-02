@@ -45,4 +45,28 @@ body, button, datalist {
   section {
     padding: 0.5rem;
   }
+
+  .carousel-item {
+    display: block;
+    transition: all 0.25s linear;
+  
+    -webkit-animation: slide-side 0.5s ease-out;
+    -moz-animation: slide-side 0.5s ease-out;
+  }
+  @keyframes slide-side {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(10%);
+      //-webkit-transform: translateX(-10%);
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+    }
+  }
+  // @-webkit-keyframes slide-down {
+  // @-moz-keyframes slide-down {
 }

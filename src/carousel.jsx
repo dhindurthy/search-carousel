@@ -39,23 +39,25 @@ class Carousel extends React.Component {
           {this.props.todos.map(
             (i, index) =>
               this.state.activeKey === index && (
-                <li key={index}>{this.props.panelContent(i, index)}</li>
+                <li key={index} className="carousel-item">
+                  {this.props.panelContent(i, index)}
+                </li>
               )
           )}
         </ul>
-        <div className="buttons">
+        <div role="presentation" className="buttons">
           <Button
             disabled={this.state.isPrevDisabled && this.props.prevDisabled}
             buttonClick={this.buttonClick.bind(this, "prev")}
           >
-            Previous
+            {this.props.leftButton}
           </Button>
           {this.props.textBetweenButtons(this.state.activeKey)}
           <Button
             disabled={this.state.isNextDisabled && this.props.nextDisabled}
             buttonClick={this.buttonClick.bind(this, "next")}
           >
-            Next
+            {this.props.rightButton}
           </Button>
         </div>
       </section>

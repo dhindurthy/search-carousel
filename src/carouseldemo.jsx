@@ -3,26 +3,15 @@ import "./styles.scss";
 import Button from "./button.jsx";
 import Input from "./input.jsx";
 import Carousel from "./carousel.jsx";
+import DataList from "./datalist.jsx";
 
 class CarouselDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: [],
-      activeKey: 2
+      articles: []
     };
-
-    // this.onInputChange = this.onInputChange.bind(this);
   }
-
-  // onInputChange = e => {
-  //   let articles = this.state.articles;
-  //   for (var i = 0; i < articles.length; i++) {
-  //     if (e.target.value === articles[i].name) {
-  //       this.setState({ activeKey: i });
-  //     }
-  //   }
-  // };
   componentDidMount() {
     this.setState({
       articles: [
@@ -39,15 +28,9 @@ class CarouselDemo extends React.Component {
   render() {
     return (
       <section className="main">
-        {/* <section>
-          <Input list="something" onChange={this.onInputChange} />
-          <datalist id="something">
-            {this.state.articles.map((article, index) => (
-              <option key={index}>{article.name}</option>
-            ))}
-          </datalist>
-        </section> */}
         <Carousel
+          leftButton="Previousa"
+          rightButton="Next"
           todos={this.state.articles}
           textBetweenButtons={activeKey => (
             <span>
@@ -58,7 +41,7 @@ class CarouselDemo extends React.Component {
             (index === 1 && (
               <section style={{ backgroundColor: "violet" }}>
                 <h2>Custom Template</h2>
-                <Input />
+                <Input label="Something here" />
                 <p>{i.name}</p>
               </section>
             )) ||
@@ -70,11 +53,22 @@ class CarouselDemo extends React.Component {
                 <Button>Sample button</Button>
                 <p>{i.name}</p>
               </section>
-            )) || (
-              <section style={{ backgroundColor: "yellow" }}>
-                <h3>Form or Component or any UI customizable by user</h3>
-                <h4>{i.name}</h4>
+            )) ||
+            (index === 3 && (
+              <section style={{ backgroundColor: "indigo", color: "white" }}>
+                <Input
+                  label="Typeahead Datalist"
+                  id="animals"
+                  list="something"
+                  onChange={this.onInputChange}
+                />
+                <DataList id="something" articles={this.state.articles} />
               </section>
+            )) || (
+              <article style={{ backgroundColor: "yellow" }}>
+                <h3>Form or Component or any UI customizable</h3>
+                <h4>{i.name}</h4>
+              </article>
             )
           }
         />
