@@ -4,6 +4,7 @@ import Button from "./button.jsx";
 import Input from "./input.jsx";
 import Carousel from "./carousel.jsx";
 import DataList from "./datalist.jsx";
+import Example from "./button-hook.jsx";
 
 class CarouselDemo extends React.Component {
   constructor(props) {
